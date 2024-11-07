@@ -21,7 +21,7 @@ public class EjecutarCaracol {
             // Crear y lanzar los procesos
             for (String[] param : parametros) {
                 // Incluir el directorio ./bin en el CLASSPATH
-                ProcessBuilder pb = new ProcessBuilder("java", "-cp", "bin", "Caracol", param[0], param[1], param[2]);
+                ProcessBuilder pb = new ProcessBuilder("java", "-cp", "/home/gilbert/.config/Code/User/workspaceStorage/58dc4b84c0d29517665d3f49369a610a/redhat.java/jdt_ws/proj05_89cb9740/bin", "Caracol", param[0], param[1], param[2]);
                 Process proceso = pb.start();
                 procesos.add(proceso);
 
