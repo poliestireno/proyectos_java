@@ -13,8 +13,7 @@ public class MultiHilo
         
         h1.start();
         h2.start();
-        h3.start();
-        
+        h3.start();      
         /*
         try {
             h1.join(); // espera que los otros hilos acaben
@@ -23,8 +22,12 @@ public class MultiHilo
             System.out.println("Exception"+e.getMessage());
         }
             */
-
-
+        while(h1.isAlive() || h2.isAlive() || h3.isAlive())
+        {
+            System.out.println("yield");
+            Thread.yield(); // cede el control al procesador
+        }
+        System.out.println("todos los hilos has terminado");
 
     }
 }
