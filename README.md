@@ -32,3 +32,7 @@ Now thread which is in the another waiting state will go to ready state when it 
 **6\.** If running thread calls the ***stop()*** method then immediately enters into dead state.
 
 **Note:** now the methods ***suspend(),*** ***resume(),stop()*** are deprecated and not recommended to use.   
+
+# (Conpurrencia) Problema Productor/Consumidor
+![image](https://github.com/user-attachments/assets/267ddbc6-1521-49d1-b475-a4bff14f6da5)
+
