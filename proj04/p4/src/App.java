@@ -4,14 +4,20 @@ public class App {
         
         MiBuffer mb1 = new MiBuffer(5);
 
-        mb1.producir(12);
-        mb1.producir(13);
-        mb1.producir(14);
-        mb1.producir(15);
-        mb1.producir(16);
-        mb1.producir(17);
+        Thread pro1 = new Thread(new Productor(mb1,0, 1000, 2000));
+        //Thread pro2 = new Thread(new Productor(mb1,0, 1000, 2000));
+        
+        Thread con1 = new Thread(new Consumidor(mb1, 3000, 5000));
+        //Thread con2 = new Thread(new Consumidor(mb1, 2000, 2000));
 
         
-        System.out.println(mb1);
+        pro1.start();
+        //pro2.start();
+        con1.start();
+        
+
+
+
+
     }
 }

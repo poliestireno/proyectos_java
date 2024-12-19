@@ -1,6 +1,5 @@
 
 import java.util.LinkedList;
-import javax.print.attribute.standard.Sides;
 
 public class MiBuffer 
 {
@@ -11,16 +10,23 @@ public class MiBuffer
     {
         this.capacidad=in_capacidad;
     }
-    public synchronized void producir(int value)
+    public synchronized void producir(int value) throws InterruptedException
     {
         while (cola.size()==capacidad) 
         {            
+            System.out.println("BLOQUEADO PRODUCTOR para elemento "+value);
             wait();
         }
         cola.add(value);
+        notifyAll();        
     }
-    public synchronized int consumir()
+    public synchronized int consumir() throws InterruptedException
     {
+        while (cola.isEmpty()) 
+        {            
+            System.out.println("BLOQUEADO CONSUMIDOR COLA VACIAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            wait();
+        }
         int value = cola.removeFirst();
         notifyAll();
         return value;
