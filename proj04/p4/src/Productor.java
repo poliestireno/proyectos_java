@@ -27,7 +27,7 @@ public class Productor implements Runnable{
                 ni++;              
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-            };
+            }
         }
     }
 

@@ -20,11 +20,11 @@ public class MiBuffer
         cola.add(value);
         notifyAll();        
     }
-    public synchronized int consumir() throws InterruptedException
+    public synchronized int consumir(int nivel) throws InterruptedException
     {
         while (cola.isEmpty()) 
         {            
-            System.out.println("BLOQUEADO CONSUMIDOR COLA VACIAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            System.out.println("BLOQUEADO CONSUMIDOR NIVEL:"+nivel+" COLA VACIAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             wait();
         }
         int value = cola.removeFirst();
