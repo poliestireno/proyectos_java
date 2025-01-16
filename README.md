@@ -38,6 +38,11 @@ Now thread which is in the another waiting state will go to ready state when it 
 ![image](https://github.com/user-attachments/assets/267ddbc6-1521-49d1-b475-a4bff14f6da5)
 ![image](https://github.com/user-attachments/assets/e92ea083-8127-4079-9997-e64cf7ce7697)
 ![image](https://github.com/user-attachments/assets/44b930c5-e4f6-43df-97b6-4852c7555dd6)
+# Semaforos en Java
+![image](https://github.com/user-attachments/assets/f21e8f4f-38fa-4f48-9732-3fad3c3d921d)
+![image](https://github.com/user-attachments/assets/68ce6e0d-0518-456c-a50d-64dc1a51fb57)
+
+
 
 
 
