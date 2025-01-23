@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) throws Exception 
     {
         
-        Semaphore sem = new Semaphore(7);
+        Semaphore sem = new Semaphore(1);
 
         for (int i = 1; i < 9; i++)
         {
