@@ -78,12 +78,6 @@ Los **sockets UDP** permiten enviar datos rápidamente sin garantizar su recepci
 * Para evitar retrasos, las videollamadas transmiten audio y video con UDP.  
 * Ejemplo: En una llamada de Zoom, la calidad del audio puede bajar si hay pérdida de paquetes, pero la comunicación sigue.
 
- **Ejemplo real:** Aplicaciones como **YouTube Live, Zoom, Twitch, o videojuegos en línea** (Fortnite, CS:GO).
-
-* Los datos (video/audio o posiciones en un videojuego) se transmiten sin garantizar la entrega.  
-* Si se pierde un paquete, el sistema sigue funcionando sin esperarlo (para evitar retrasos).  
-* UDP es más rápido y liviano que TCP, por lo que se usa en estas aplicaciones.
-
 ## **3\. Multicast Socket** 
 
 Los **sockets multicast** permiten enviar **datos a múltiples clientes al mismo tiempo** sin necesidad de establecer una conexión con cada uno.
