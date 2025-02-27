@@ -27,7 +27,11 @@ public class Server {
 
             System.out.println("Mensaje recibido del cliente:"+mensajeCliente);
 
-            clienteSocket.close();
+            salida.println("SERVIDOR: Hola cliente, he recibido tu mensaje");
+
+            entrada.close();
+            salida.close();
+            clienteSocket.close(); 
 
         } 
         catch (IOException e) 

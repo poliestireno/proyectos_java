@@ -4,23 +4,27 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Client {
+public class Client2 {
     public static void main(String[] args) 
     {
         String host ="localhost";
-        int puerto = 12345;
+        int puerto = 8888;
         try (Socket socket = new Socket(host,puerto))
         {
             System.out.println("Conectado al servidor");
 
             BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
             PrintWriter salida = new PrintWriter(socket.getOutputStream(),true);
 
-            salida.println("HOLA SOY EL CLIENTE");
+            BufferedReader entradaConsola = new BufferedReader(new InputStreamReader(System.in));
 
-            String sRespuestaDelServidor = entrada.readLine();
-            System.out.println("sRespuestaDelServidor:"+sRespuestaDelServidor);
+            System.out.println("Escribe tus mensajes o la palabra fin");
+            String mensaje;
+            while (!(mensaje = entradaConsola.readLine()).equalsIgnoreCase("fin"))
+            {
+                salida.println(mensaje);
+                System.out.println("SERVIDOR DICE: "+entrada.readLine());
+            }
             entrada.close();
             salida.close();
 
