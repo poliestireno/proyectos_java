@@ -21,10 +21,10 @@ public class ManejadorSocket implements Runnable
             entrada = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
             salida = new PrintWriter(socketClient.getOutputStream(),true);
             String mensaje;
-            while ((mensaje = entrada.readLine())!=null) 
+            while (!(mensaje = entrada.readLine()).equals("")) 
             { 
-                System.out.println("Mensaje recibido en el cliente del servidor: "+mensaje);
-                salida.println("Hola Servidor soy el cliente, he recibido este mensaje:"+mensaje);
+                System.out.println("Mensaje recibido del cliente: "+mensaje);
+                salida.println("Soy el manejador del servidor, he recibido este mensaje:"+mensaje);
             }
 
         } catch (IOException e) {
@@ -33,6 +33,7 @@ public class ManejadorSocket implements Runnable
         finally
         {
             try {
+                System.out.println("cliente desconectado");
                 entrada.close();
                 salida.close();
                 socketClient.close();
