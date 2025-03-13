@@ -30,7 +30,7 @@ public class Client2 {
                 salida.println("cliente id "+idUnico+":"+mensaje);
                 System.out.println("SERVIDOR DICE: "+entrada.readLine());
             }
-            salida.println("");
+            //salida.println("");
             entrada.close();
             salida.close();
 
