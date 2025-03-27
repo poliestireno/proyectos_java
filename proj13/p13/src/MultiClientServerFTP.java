@@ -4,7 +4,7 @@ import java.net.Socket;
 
 public class MultiClientServerFTP {
 
-    private static final int PUERTO = 7777;
+    private static final int PUERTO = 7777; 
     
     public static void main(String[] args) throws Exception 
     {

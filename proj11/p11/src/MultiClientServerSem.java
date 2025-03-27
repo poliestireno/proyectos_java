@@ -22,7 +22,7 @@ public class MultiClientServerSem {
                 Socket clienteSocket = serverSocket.accept();
                 System.out.println("Cliente conectado. Conexiones activas:"+(MAX_CONEXIONES-semaforo.availablePermits()));
                 // Lanzar hilo manejador del clienteSocket
-                ManejadorSocketSem clienteManejador = new ManejadorSocketSem(clienteSocket,semaforo);
+                ManejadorSocketAtomic clienteManejador = new ManejadorSocketAtomic(clienteSocket,semaforo);
                 new Thread(clienteManejador).start();
             }
         }
